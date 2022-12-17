@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",                           
+    "jsxFactory": "h",                        
+    "jsxFragmentFactory": "Fragment",         
+    "baseUrl": "./",                   
+    "target": "es6",                               
+    "module": "commonjs",                                                     
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,      
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "paths": {                              
+      "react": ["./node_modules/preact/compat"],
+      "react-dom": ["./node_modules/preact/compat"]
+    },             
+  },
+  "exclude":[
+    "./node_modules"
+  ]
+}
