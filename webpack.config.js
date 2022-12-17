@@ -15,21 +15,9 @@ module.exports = env => {
 
     // client config
     const clientMainBundleConfig = {
+
         name: 'main',
         entry: { 'main': __dirname + "/src/main.tsx" },
-        target: 'web',
-        output: {
-            path: __dirname + "/public",
-            filename: "[name].js"
-        },
-        resolve: {
-            alias: { 
-                "react": "preact/compat",
-                "react-dom/test-utils": "preact/test-utils",
-                "react-dom": "preact/compat",     // Must be below test-utils
-                "react/jsx-runtime": "preact/jsx-runtime"
-            }
-        },
         mode: environment.NODE_ENV,
         devtool: "source-map",
         resolve: {
@@ -56,6 +44,20 @@ module.exports = env => {
                 }
             ]
         },
+        target: 'web',
+        output: {
+            path: __dirname + "/public",
+            filename: "[name].js"
+        },
+        resolve: {
+            alias: { 
+                "react": "preact/compat",
+                "react-dom/test-utils": "preact/test-utils",
+                "react-dom": "preact/compat",     // Must be below test-utils
+                "react/jsx-runtime": "preact/jsx-runtime"
+            }
+        },
+        
     };
 
     return [clientMainBundleConfig];
