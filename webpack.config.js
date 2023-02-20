@@ -1,4 +1,5 @@
 "use strict";
+
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 
@@ -16,12 +17,15 @@ module.exports = env => {
     // client config
     const clientMainBundleConfig = {
 
-        name: 'main',
-        entry: { 'main': __dirname + "/src/main.tsx" },
         mode: environment.NODE_ENV,
         devtool: "source-map",
         resolve: {
             extensions: [".js", ".json", ".ts", ".tsx"],
+            alias: { 
+                "react": "preact/compat",
+                "react-dom/test-utils": "preact/test-utils",
+                "react-dom": "preact/compat",
+            }
         },
         plugins: [
             new webpack.DefinePlugin(envKeys)
@@ -49,15 +53,8 @@ module.exports = env => {
             path: __dirname + "/public",
             filename: "[name].js"
         },
-        resolve: {
-            alias: { 
-                "react": "preact/compat",
-                "react-dom/test-utils": "preact/test-utils",
-                "react-dom": "preact/compat",     // Must be below test-utils
-                "react/jsx-runtime": "preact/jsx-runtime"
-            }
-        },
-        
+        name: 'main',
+        entry: { 'main': __dirname + "/src/main.tsx" },
     };
 
     return [clientMainBundleConfig];
