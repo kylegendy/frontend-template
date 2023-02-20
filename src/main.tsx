@@ -1,10 +1,8 @@
+import { h, render } from "preact";
 
-import { h, render } from "preact"
-import Router, { Route } from "preact-router";
-
-import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { red } from '@mui/material/colors';
+
+import ExampleComponent from "./exampleComponent";
 
 // import PouchDB from 'pouchdb';
 // const db: PouchDB.Database<{}> = new PouchDB('blob');
@@ -32,12 +30,12 @@ const theme = createTheme({
   },
 });
 
-function AccountPages() {
+function Main() {
     return (
       <ThemeProvider theme={theme}>
-        <Button>click me</Button>
+        <ExampleComponent />
       </ThemeProvider>
     );
 };
 
-render(<AccountPages />, document.body);
+render(<Main />, document.body);
