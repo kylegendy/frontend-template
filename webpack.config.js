@@ -21,10 +21,7 @@ module.exports = env => {
         devtool: "source-map",
         resolve: {
             extensions: [".js", ".json", ".ts", ".tsx"],
-            alias: { 
-                "react": "preact/compat",
-                "react-dom/test-utils": "preact/test-utils",
-                "react-dom": "preact/compat",
+            alias: {
             }
         },
         plugins: [
