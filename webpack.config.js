@@ -2,6 +2,7 @@
 
 const dotenv = require('dotenv');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => {
 
@@ -21,12 +22,11 @@ module.exports = env => {
         devtool: "source-map",
         resolve: {
             extensions: [".js", ".json", ".ts", ".tsx"],
-            alias: {
-            }
+            alias: {}
         },
         plugins: [
             new webpack.DefinePlugin(envKeys)
-        ],
+        ].concat([new MiniCssExtractPlugin({filename: 'styles/main.css'})]),
         module: {
             rules: [
                 {
@@ -41,8 +41,22 @@ module.exports = env => {
                 },
                 {
                     test: /\.css$/,
-                    use: [ 'style-loader', 'css-loader' ]
-                }
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                postcssOptions: {
+                                    plugins: [ 
+                                        require('tailwindcss')('./tailwind.config.main.js'),
+                                        require('autoprefixer'),
+                                    ]
+                                },
+                            }
+                        }
+                    ],
+                },
             ]
         },
         target: 'web',
@@ -51,7 +65,7 @@ module.exports = env => {
             filename: "[name].js"
         },
         name: 'main',
-        entry: { 'main': __dirname + "/src/main.tsx" },
+        entry: { 'main': __dirname + "/src/main/main.tsx" },
     };
 
     return [clientMainBundleConfig];
