@@ -1,5 +1,5 @@
 .env
 node_modules/
-public/main.*
+public/landing.*
 public/styles
 public/styles/*

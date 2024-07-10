@@ -16,7 +16,7 @@ module.exports = env => {
     }, {});
 
     // client config
-    const clientMainBundleConfig = {
+    const clientLandingBundleConfig = {
 
         mode: environment.NODE_ENV,
         devtool: "source-map",
@@ -26,7 +26,7 @@ module.exports = env => {
         },
         plugins: [
             new webpack.DefinePlugin(envKeys)
-        ].concat([new MiniCssExtractPlugin({filename: 'styles/main.css'})]),
+        ].concat([new MiniCssExtractPlugin({filename: 'styles/landing.css'})]),
         module: {
             rules: [
                 {
@@ -49,14 +49,14 @@ module.exports = env => {
                             options: {
                                 postcssOptions: {
                                     plugins: [ 
-                                        require('tailwindcss')('./tailwind.config.main.js'),
+                                        require('tailwindcss')('./tailwind.config.landing.js'),
                                         require('autoprefixer'),
                                     ]
                                 },
                             }
                         }
                     ],
-                },
+                }
             ]
         },
         target: 'web',
@@ -64,9 +64,9 @@ module.exports = env => {
             path: __dirname + "/public",
             filename: "[name].js"
         },
-        name: 'main',
-        entry: { 'main': __dirname + "/src/main/main.tsx" },
+        name: 'landing',
+        entry: { 'landing': __dirname + "/src/landing/landing.tsx" },
     };
 
-    return [clientMainBundleConfig];
+    return [clientLandingBundleConfig];
 };
