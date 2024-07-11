@@ -15,6 +15,8 @@ module.exports = env => {
         return prev;
     }, {});
 
+    const prodMode = environment.NODE_ENV === 'production';
+
     // client config
     const clientLandingBundleConfig = {
 
@@ -42,7 +44,7 @@ module.exports = env => {
                 {
                     test: /\.css$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
                         'css-loader',
                         {
                             loader: "postcss-loader",
