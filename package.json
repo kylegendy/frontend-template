@@ -14,7 +14,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.10",
+    "@material-tailwind/react": "2.0.5",
     "@types/node": "^18.14.0",
     "@types/pouchdb": "^6.4.0",
     "autoprefixer": "^10.4.19",
