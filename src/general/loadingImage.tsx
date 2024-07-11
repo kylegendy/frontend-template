@@ -11,8 +11,6 @@ function LoadingImage(props: LoadingImageProps) {
     const [loading, setLoading] = useState(true);
     const {imgAttributes, ...attr} = props;
 
-    console.log(styles);
-
     return (
         <div {...attr}
             className={loading ?  styles.loadingImg + (props.className ? " " + props.className : "")  : props.className}
