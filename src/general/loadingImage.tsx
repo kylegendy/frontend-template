@@ -9,12 +9,12 @@ interface LoadingImageProps extends HTMLAttributes<HTMLDivElement> {
 function LoadingImage(props: LoadingImageProps) {
 
     const [loading, setLoading] = useState(true);
-    const {imgAttributes, ...attr} = props;
+    const {imgAttributes, className, ...attr} = props;
 
 
     return (
         <div {...attr}
-            className={loading ?  styles.loadingImg + (props.className ? " " + props.className : "")  : props.className}
+            className={loading ?  styles.loadingImg + (className ? " " + className : "")  : className}
         >
             <img {...imgAttributes} onLoad={() => setLoading(false)} />
         </div>

@@ -1,0 +1,50 @@
+
+:root {
+    --bar-width: 100%;
+    --bar-height: 5%;
+    --hamburger-gap: 20%;
+    --icon-color: black;
+    --animation-timing: 100ms ease-in-out;
+}
+
+.hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    cursor: pointer;
+    gap: var(--hamburger-gap);
+    height: 100%;
+    width: 100%;
+}
+
+.hamburgerMenu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+.hamburgerMenu::before, .hamburgerMenu::after {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--icon-color);
+    border-radius: 99999px;
+}
+
+.hamburgerMenu:has(input:checked) {
+    gap: 0;
+}
+.hamburgerMenu:has(input:checked)::before {
+    transform: translateY(100%) rotate(45deg);
+}
+.hamburgerMenu:has(input:checked)::after {
+    transform: rotate(-45deg);
+}
+
+.hamburgerMenu, .hamburgerMenu::before, .hamburgerMenu::after {
+    transition: var(--animation-timing);
+}

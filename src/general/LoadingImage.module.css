@@ -3,6 +3,9 @@
     border-top: 16px solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 2s linear infinite;
+    max-width: max-content;
+    max-height: max-content;
+    aspect-ratio: 1 / 1;
 }
 .loadingImg img {
     opacity: 0;

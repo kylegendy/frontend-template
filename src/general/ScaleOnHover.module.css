@@ -1,0 +1,3 @@
+.scaleContainer {
+    @apply absolute transition duration-200 hover:scale-105 hover:z-10 hover:shadow-2xl;
+}
