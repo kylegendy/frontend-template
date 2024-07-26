@@ -3,6 +3,7 @@
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 
 module.exports = env => {
 
@@ -27,8 +28,10 @@ module.exports = env => {
             alias: {}
         },
         plugins: [
-            new webpack.DefinePlugin(envKeys)
-        ].concat([new MiniCssExtractPlugin({filename: 'styles/landing.css'})]),
+            new webpack.DefinePlugin(envKeys),
+            new MiniCssExtractPlugin({ filename: 'styles/landing.css' }),
+            new CssoWebpackPlugin(),
+        ].concat([]),
         module: {
             rules: [
                 {
