@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = withMT({
+module.exports = {
     content: ["./src/landing/**/*.{tsx,ts,css}"],
     theme: {
         extend: {},
@@ -16,6 +15,7 @@ module.exports = withMT({
         }
     },
     plugins: [
+        require('daisyui'),
         function ({ addBase, theme }) {
             addBase({
                 'h1': {
@@ -69,4 +69,4 @@ module.exports = withMT({
             });
         }
     ],
-});
+};

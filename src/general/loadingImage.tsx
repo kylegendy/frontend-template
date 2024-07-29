@@ -3,6 +3,7 @@ import * as css from './LoadingImage.module.css';
 const styles = css as any;
 
 interface LoadingImageProps extends HTMLAttributes<HTMLDivElement> {
+    alt: string,
     imgAttributes: React.ImgHTMLAttributes<HTMLImageElement>,
 }
 
@@ -16,7 +17,7 @@ function LoadingImage(props: LoadingImageProps) {
         <div {...attr}
             className={loading ?  styles.loadingImg + (className ? " " + className : "")  : className}
         >
-            <img {...imgAttributes} onLoad={() => setLoading(false)} />
+            <img {...imgAttributes} alt={props.alt} onLoad={() => setLoading(false)} />
         </div>
     );
 };
