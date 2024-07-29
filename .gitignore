@@ -3,3 +3,4 @@ node_modules/
 public/landing.*
 public/styles
 public/styles/*
+public/*.woff
