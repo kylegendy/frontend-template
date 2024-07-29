@@ -1,0 +1,15 @@
+.starsContainer {
+    @apply inline-flex items-center;
+}
+
+.star {
+    @apply w-6 h-6 text-gray-500 cursor-pointer;
+}
+
+.starOn {
+    @apply text-yellow-500;
+}
+
+.readOnly {
+    @apply cursor-auto;
+}
