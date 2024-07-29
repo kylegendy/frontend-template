@@ -1,4 +1,6 @@
 import { HTMLAttributes, useRef, useState, useEffect } from "react";
+import * as css from './DeckSearch.module.css';
+const styles = css as any;
 
 interface DeckSearchProps extends HTMLAttributes<HTMLElement> {
     positionState?: {
@@ -60,7 +62,7 @@ function DeckSearch(props: DeckSearchProps) {
                 transitionDuration={transitionDuration}
                 circular={circular}
                 styleFunctions={styleFunctions}
-                className={`flex flex-row relative w-full h-full`} 
+                className={styles.listContainer} 
                 children={children} 
             />
         </div>
@@ -193,7 +195,7 @@ function ListContainer(props: ListContainerProps) {
                 return (
                     <ItemContainer 
                         key={index} index={index} 
-                        className={`absolute left-1/2 select-none`}
+                        className={styles.itemContainer}
                         styleFuncArgs={{
                             contWidth: width as number,
                             activeLocation: positionState.position,

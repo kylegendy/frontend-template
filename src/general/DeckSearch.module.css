@@ -1,0 +1,7 @@
+.listContainer {
+    @apply flex flex-row relative w-full h-full;
+}
+
+.itemContainer {
+    @apply absolute left-1/2 select-none;
+}
