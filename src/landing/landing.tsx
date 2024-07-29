@@ -1,13 +1,12 @@
-import './landing.css'
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "@material-tailwind/react";
+
+import './landing.css'
 
 import ExampleComponent from "./exampleComponent";
 
 // import PouchDB from 'pouchdb';
 // const db: PouchDB.Database<{}> = new PouchDB('blob');
-
 
 function Landing() {
     return (
@@ -17,9 +16,7 @@ function Landing() {
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-    <ThemeProvider>
-        <React.StrictMode>
-            <Landing />
-        </React.StrictMode>
-    </ThemeProvider>
+    <React.StrictMode>
+        <Landing />
+    </React.StrictMode>
 );
