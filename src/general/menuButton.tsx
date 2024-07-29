@@ -24,6 +24,7 @@ function MenuButton(props: MenuButtonProps) {
         <div {...args} style={{ ...style }} className={"h-10 w-10 hamburgerMenuContainer " + className}>
             <label className={styles.hamburgerMenu}>
                 <input 
+                    id={styles.inputId}
                     style={{
                         backgroundColor: "red"
                     }}

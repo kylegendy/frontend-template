@@ -7,6 +7,8 @@
     --animation-timing: 100ms ease-in-out;
 }
 
+#inputId {}
+
 .hamburgerMenu {
     display: flex;
     flex-direction: column;
