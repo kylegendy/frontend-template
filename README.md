@@ -3,8 +3,6 @@
 This repository serves as a codebase template for creating frontend portions of websites.  All that actually means is that I've collected a number of tools together and configured most if not all of them.  This means you can spend less time on setup and more time developing.  I've put a few examples together as well, in addition to some other standard UI components that typically come in handy.
 
 ## Getting Started
-Before you start following this list, I strongly recommend reading through the rest of this document.
-
 Although this project puts a number of things together for you, there are a few manual steps you have to do first.
 
 (Pre-reqs: make sure you have nodejs, webpack, and typescript installed)
@@ -17,12 +15,12 @@ npm run local
 ```
 3. At this point your local server should be running, and you should be able to access it on your device's browser using the url [localhost:8080](http://localhost:8080).
 
-After you verify the website it up, then you now know everything is installed, setup, and works! You can start developing a website.
+After you verify the website it up, you then know everything is installed, setup, and works! You can start developing a website.
 
 ### Workflow advice
 I suggest opening two terminals at the project directory.  One to host the server (ie running 'npm run local').  The other will watch the frontend code and build on any changes to the frontend code (run 'npm run WP:watch').  This way you don't have to keep running the build command every time you make a change.
 
-For faster build time ensure `NODE_ENV='development'` is in your `./.env` file.  Switch it to `NODE_ENV='production'` to slim down your compiled files in the `./public/` directory.
+For faster build time ensure `NODE_ENV='development'` is in your `./.env` file.  Switch it to `NODE_ENV='production'` to slim down your compiled files in the `./public` directory.
 
 ## Tools / Packages / Frameworks
 You can just look at the `./package.json` file to know for sure what tools/packages/frameworks are being used, but I want to explicitely list out some important ones.
@@ -51,7 +49,7 @@ Although the project actually has more files/directories, these are the ones you
 ```
 1. The `./.env` file is used to store environment variables and is required to run your builds.
 2. The `./public` directory is where all public (ie, browser [except for maybe the server.js file?]) facing files are.  The build process will create/compile files, and place them in this directory.
-3. The `./public/index` is the default html page that will be served, this will load in the default `./public/landing.js` and `./public/styles/landing.css` files which are created during the build process.
+3. The `./public/index.html` is the default html page that will be served, this will load in the default `./public/landing.js` and `./public/styles/landing.css` files which are created during the build process.
 4. The `./server.js` file is strictly supposed to be used for development purposes, it runs the simple web server on your local device.  You might make changes to this file if you introduce new .html files or other things.
 5. The `./src` directory stores the files that are developed (or used for development), and are used to create/compile the public facing files.
 6. The `./src/general` directory stores generalized components (and respective css modules) that could be used across projects.  This may eventually be moved into a separate repository, but for now it's here.
@@ -61,4 +59,4 @@ Although the project actually has more files/directories, these are the ones you
 10. The `./webpack.config.js` file is a configuration file for webpack, which is a development tool that this project uses for the build process.  You may want to update this if you end up needing to do something complicated.
 
 ## Production Ready
-Once you're happy with your product and you want to send it off, you should only need to provide the `./public` directory.  For instance, just store it's contents on your own github pages website, and you're good to go!
+Once you're happy with your product and you want to send it off, you should only need to provide the `./public` directory.  For instance, just store it's contents on your own github pages repository, and you're good to go!
