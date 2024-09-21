@@ -7,12 +7,12 @@ Although this project puts a number of things together for you, there are a few 
 
 (Pre-reqs: make sure you have [nodejs](https://nodejs.org/en/download/package-manager) installed)
 1. Click the "Use this template" button at the top right of this github page and select "Create a new repository" to start.
-2. Clone your new repository onto your local machine.
-3. From the home directory of the project, copy the `./.env.example` file into a new `./.env` file, this is an env file used to store environment variables and is required to run your builds.
+2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your new repository onto your local machine.
+3. From the home directory of the project, open a terminal and copy the `./.env.example` file into a new `./.env` file, this is an env file used to store environment variables and is required to run your builds.
 ```
 cp ./.env.example ./.env
 ```
-4. From the home directory of the project, run the following:
+4. From the home directory of the project, run the following terminal commands:
 ```
 npm install
 npm run build
@@ -20,7 +20,7 @@ npm run local
 ```
 5. At this point your local server should be running, and you should be able to access it on your device's browser using the url [localhost:8080](http://localhost:8080).
 
-After you verify the website it up, you then know everything is installed, setup, and works! You can start developing a website.
+After you verify the website is up, you then know everything is installed, setup, and works! You can start developing a website.
 
 ### Workflow advice
 I suggest opening two terminals at the project directory.  One to host the server (ie running 'npm run local').  The other will watch the frontend code and build on any changes to the frontend code (run 'npm run WP:watch').  This way you don't have to keep running the build command every time you make a change.
