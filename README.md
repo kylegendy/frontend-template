@@ -5,7 +5,7 @@ This repository serves as a codebase template for creating frontend portions of 
 ## Getting Started
 Although this project puts a number of things together for you, there are a few manual steps you have to do first.
 
-(Pre-reqs: make sure you have nodejs, webpack, and typescript installed)
+(Pre-reqs: make sure you have [nodejs](https://nodejs.org/en/download/package-manager) installed)
 1. Click the "Use this template" button at the top right of this github page and select "Create a new repository" to start.
 2. Clone your new repository onto your local machine.
 3. From the home directory of the project, copy the `./.env.example` file into a new `./.env` file, this is an env file used to store environment variables and is required to run your builds.
