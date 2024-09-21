@@ -6,14 +6,19 @@ This repository serves as a codebase template for creating frontend portions of 
 Although this project puts a number of things together for you, there are a few manual steps you have to do first.
 
 (Pre-reqs: make sure you have nodejs, webpack, and typescript installed)
-1. Copy the `./.env.example` file into a new `./.env` file, this is an env file used to store environment variables and is required to run your builds.
-2. In the home directory of the project, run the following:
+1. Click the "Use this template" button at the top right of this github page and select "Create a new repository" to start.
+2. Clone your new repository onto your local machine.
+3. From the home directory of the project, copy the `./.env.example` file into a new `./.env` file, this is an env file used to store environment variables and is required to run your builds.
+```
+cp ./.env.example ./.env
+```
+4. From the home directory of the project, run the following:
 ```
 npm install
 npm run build
 npm run local
 ```
-3. At this point your local server should be running, and you should be able to access it on your device's browser using the url [localhost:8080](http://localhost:8080).
+5. At this point your local server should be running, and you should be able to access it on your device's browser using the url [localhost:8080](http://localhost:8080).
 
 After you verify the website it up, you then know everything is installed, setup, and works! You can start developing a website.
 
